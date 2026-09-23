@@ -44,6 +44,13 @@
       <tr><td>VD 5008</td><td>Senha padrão</td><td>Jul/15</td></tr><tr><td>VD 5016</td><td>Senha padrão</td><td>Jul/15</td></tr>
       <tr><td>VD 5024</td><td>Senha padrão</td><td>Jul/15</td></tr><tr><td>VD 5032</td><td>Senha padrão</td><td>Jun/15</td></tr>
       <tr><td>VD 8D1 240M</td><td>Senha padrão</td><td>Dez/14</td></tr><tr><td>VD 8E 240</td><td>Senha padrão</td><td>Dez/12</td></tr><tr><td>VD 8E 240C</td><td>Senha padrão</td><td>Fev/13</td></tr>
+      <tr><td>VD 4H 120</td><td>Senha padrão</td><td>-</td></tr>
+      <tr><td>VD 16H 480</td><td>Senha padrão</td><td>-</td></tr>
+      <tr><td>VD 4S 120</td><td>Senha padrão</td><td>-</td></tr>
+      <tr><td>VD 16S 480</td><td>Senha padrão</td><td>-</td></tr>
+      <tr><td>VD 4S 120 ST</td><td>Senha padrão</td><td>-</td></tr>
+      <tr><td>VD 16S 480 ST</td><td>Senha padrão</td><td>-</td></tr>
+      <tr><td>VD 32M 960</td><td>Senha padrão</td><td>-</td></tr>
     </tbody></table></div>
   </main>
   <script>
@@ -54,6 +61,7 @@
     document.querySelectorAll('#products td:nth-child(3)').forEach((cell)=>{
       const value=cell.textContent.trim();
       if(value.toLowerCase()==='equipamento em linha'){cell.classList.add('phaseout','in-line');return;}
+      if(value === '-' || value.toLowerCase() === '—'){cell.classList.add('phaseout','old');return;}
       const match=value.toLowerCase().match(/^(jan|fev|mar|abr|mai|jun|jul|ago|set|out|nov|dez)\/(\d{2})$/);
       if(!match)return;
       const date=new Date(2000+Number(match[2]),months[match[1]]+1,0);
