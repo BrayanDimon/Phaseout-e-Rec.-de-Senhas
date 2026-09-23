@@ -3,104 +3,61 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Tabela de phaseout e recuperação de senha dos produtos da linha Analógica - VD." />
+  <meta name="description" content="Tabela de phaseout e recuperação de senha de produtos CFTV." />
   <title>Phaseout & Recuperação de senha - CFTV</title>
   <style>
-    :root {
-      --black: #070707;
-      --surface-2: #181818;
-      --line: rgba(255,255,255,.11);
-      --white: #f5f5f5;
-      --gray: #b8b8b8;
-      --muted: #858585;
-      --green: #18a957;
-      --red: #dc2626;
-      --red-light: #fecaca;
-    }
-
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      min-width: 320px;
-      background: var(--black);
-      color: var(--white);
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    }
-
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      opacity: .35;
-      background: repeating-linear-gradient(0deg, transparent 0 28px, rgba(255,255,255,.025) 29px);
-    }
-
-    .page { position: relative; max-width: 1500px; margin: auto; padding: 30px 5vw 40px; }
-
-    .title-block {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 16px 0 28px;
-    }
-
-    h1 {
-      margin: 0;
-      font-size: clamp(24px, 3vw, 42px);
-      line-height: 1.1;
-      letter-spacing: 0.7px;
-      text-transform: uppercase;
-      font-weight: 900;
-      font-family: "Segoe UI", Tahoma, sans-serif;
-      text-shadow: 0 0 18px rgba(255,255,255,0.08);
-      white-space: nowrap;
-    }
-
-    .toolbar { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin: 26px 0 16px; }
-    .toolbar p { margin: 0; color: var(--gray); font-size: 14px; }
-    .search { width: min(100%, 340px); padding: 12px 14px; color: var(--white); background: var(--surface-2); border: 1px solid var(--line); border-radius: 9px; outline: none; }
-    .search:focus { border-color: var(--green); box-shadow: 0 0 0 3px rgba(24,169,87,.16); }
-
-    .table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 14px; background: rgba(255,255,255,.02); }
-    table { width: 100%; min-width: 700px; border-collapse: collapse; }
-    th { padding: 15px 18px; text-align: left; color: var(--white); background: rgba(24,169,87,.18); font-size: 11px; letter-spacing: 1.2px; text-transform: uppercase; }
-    td { padding: 13px 18px; color: var(--gray); border-top: 1px solid rgba(255,255,255,.07); font-size: 14px; }
-    tbody tr:nth-child(even) { background: rgba(255,255,255,.018); }
-    tbody tr:hover { background: rgba(24,169,87,.08); }
-    td:first-child { color: var(--white); font-weight: 700; white-space: nowrap; }
-    .status { display: inline-block; padding: 6px 9px; border-radius: 7px; color: var(--red-light); background: rgba(220,38,38,.15); border: 1px solid rgba(220,38,38,.48); font-size: 10px; font-weight: 700; letter-spacing: .8px; text-transform: uppercase; }
-    .not-informed { color: var(--muted); }
-
-    @media (max-width: 650px) {
-      .page { padding: 24px 16px 36px; }
-      .toolbar { align-items: flex-start; flex-direction: column; }
-      .search { width: 100%; }
-      h1 { font-size: clamp(18px, 5.5vw, 30px); }
-    }
+    :root { --black:#070707; --surface-2:#181818; --line:rgba(255,255,255,.11); --white:#f5f5f5; --gray:#b8b8b8; --muted:#858585; --green:#18a957; --red:#dc2626; --red-light:#fecaca; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; min-width:320px; background:var(--black); color:var(--white); font-family:"Segoe UI",Tahoma,Geneva,Verdana,sans-serif; }
+    body::before { content:""; position:fixed; inset:0; pointer-events:none; opacity:.35; background:repeating-linear-gradient(0deg,transparent 0 28px,rgba(255,255,255,.025) 29px); }
+    .page { position:relative; max-width:1500px; margin:auto; padding:30px 5vw 40px; }
+    .title-block { display:flex; align-items:center; justify-content:center; text-align:center; padding:16px 0 28px; }
+    h1 { margin:0; font-size:clamp(24px,3vw,42px); line-height:1.1; letter-spacing:.7px; text-transform:uppercase; font-weight:900; font-family:"Segoe UI",Tahoma,sans-serif; text-shadow:0 0 18px rgba(255,255,255,.08); white-space:nowrap; }
+    .toolbar { display:flex; justify-content:space-between; align-items:center; gap:16px; margin:26px 0 16px; }
+    .toolbar p { margin:0; color:var(--gray); font-size:14px; }
+    .search { width:min(100%,340px); padding:12px 14px; color:var(--white); background:var(--surface-2); border:1px solid var(--line); border-radius:9px; outline:none; }
+    .search:focus { border-color:var(--green); box-shadow:0 0 0 3px rgba(24,169,87,.16); }
+    .table-wrap { overflow-x:auto; border:1px solid var(--line); border-radius:14px; background:rgba(255,255,255,.02); }
+    table { width:100%; min-width:700px; border-collapse:collapse; }
+    th { padding:15px 18px; text-align:left; color:var(--white); background:rgba(24,169,87,.18); font-size:11px; letter-spacing:1.2px; text-transform:uppercase; }
+    td { padding:13px 18px; color:var(--gray); border-top:1px solid rgba(255,255,255,.07); font-size:14px; }
+    tbody tr:nth-child(even) { background:rgba(255,255,255,.018); }
+    tbody tr:hover { background:rgba(24,169,87,.08); }
+    td:first-child { color:var(--white); font-weight:700; white-space:nowrap; }
+    .status { display:inline-block; padding:6px 9px; border-radius:7px; color:var(--red-light); background:rgba(220,38,38,.15); border:1px solid rgba(220,38,38,.48); font-size:10px; font-weight:700; letter-spacing:.8px; text-transform:uppercase; }
+    .not-informed { color:var(--muted); }
+    @media (max-width:650px) { .page { padding:24px 16px 36px; } .toolbar { align-items:flex-start; flex-direction:column; } .search { width:100%; } h1 { font-size:clamp(18px,5.5vw,30px); } }
   </style>
 </head>
 <body>
   <main class="page">
-    <div class="title-block">
-      <h1>Phaseout &amp; Recuperação de senha - CFTV</h1>
-    </div>
-
+    <div class="title-block"><h1>Phaseout &amp; Recuperação de senha - CFTV</h1></div>
     <section class="toolbar" aria-label="Controles da tabela">
       <p>Phaseout e Métodos de recuperação de senha de câmeras, gravadores e acessórios.</p>
       <input id="search" class="search" type="search" placeholder="Pesquisar produto..." aria-label="Pesquisar produto" />
     </section>
-
     <div class="table-wrap">
       <table>
-        <thead>
-          <tr><th>Produto</th><th>Método de recuperação de senha</th><th>Phaseout</th><th>Status</th></tr>
-        </thead>
+        <thead><tr><th>Produto</th><th>Método de recuperação de senha</th><th>Phaseout</th><th>Status</th></tr></thead>
         <tbody id="products">
           <tr><td>CVD 1004</td><td>Senha padrão</td><td>Mar/15</td><td><span class="status">Encerrado</span></td></tr>
           <tr><td>CVD 1008</td><td>Senha padrão</td><td>Mar/15</td><td><span class="status">Encerrado</span></td></tr>
+          <tr><td>HDCVI 1004</td><td>Senha padrão</td><td>Abr/16</td><td><span class="status">Encerrado</span></td></tr>
+          <tr><td>HDCVI 1004 G2</td><td>Senha padrão e Perguntas de Segurança</td><td>Set/15</td><td><span class="status">Encerrado</span></td></tr>
+          <tr><td>HDCVI 1008</td><td>Senha padrão</td><td>Abr/16</td><td><span class="status">Encerrado</span></td></tr>
+          <tr><td>HDCVI 1008 G2</td><td>Senha padrão e Perguntas de Segurança</td><td>Nov/16</td><td><span class="status">Encerrado</span></td></tr>
+          <tr><td>HDCVI 1016</td><td>Senha padrão</td><td>Jun/16</td><td><span class="status">Encerrado</span></td></tr>
+          <tr><td>HDCVI 1016 G2</td><td>Senha padrão e Perguntas de Segurança</td><td>Jul/17</td><td><span class="status">Encerrado</span></td></tr>
+          <tr><td>HDCVI 1032</td><td>Senha padrão e Perguntas de Segurança</td><td>Set/15</td><td><span class="status">Encerrado</span></td></tr>
+          <tr><td>HDCVI 3004</td><td>Senha padrão</td><td>Dez/15</td><td><span class="status">Encerrado</span></td></tr>
+          <tr><td>HDCVI 3008</td><td>Senha padrão</td><td>Jul/15</td><td><span class="status">Encerrado</span></td></tr>
+          <tr><td>HDCVI 3016</td><td>Senha padrão</td><td>Jul/15</td><td><span class="status">Encerrado</span></td></tr>
+          <tr><td>HDCVI 3108</td><td>Senha padrão e Perguntas de Segurança</td><td>Mar/17</td><td><span class="status">Encerrado</span></td></tr>
+          <tr><td>HDCVI 3116</td><td>Senha padrão</td><td>Jul/16</td><td><span class="status">Encerrado</span></td></tr>
+          <tr><td>HDCVI 3116 G2</td><td>Senha padrão e Perguntas de Segurança</td><td>Mar/18</td><td><span class="status">Encerrado</span></td></tr>
+          <tr><td>HDCVI 3132 M</td><td>Senha padrão e Perguntas de Segurança</td><td>Jun/18</td><td><span class="status">Encerrado</span></td></tr>
+          <tr><td>HDCVI 5032 H</td><td>Senha padrão</td><td>Jun/17</td><td><span class="status">Encerrado</span></td></tr>
           <tr><td>HVD 7032</td><td>Senha padrão</td><td>Dez/17</td><td><span class="status">Encerrado</span></td></tr>
           <tr><td>VD 16D1 480H</td><td>Senha padrão</td><td>Jul/15</td><td><span class="status">Encerrado</span></td></tr>
           <tr><td>VD 16D1 480M</td><td>Senha padrão</td><td>Jul/15</td><td><span class="status">Encerrado</span></td></tr>
@@ -135,15 +92,12 @@
       </table>
     </div>
   </main>
-
   <script>
     const search = document.getElementById('search');
     const rows = [...document.querySelectorAll('#products tr')];
     search.addEventListener('input', (event) => {
       const term = event.target.value.toLowerCase().trim();
-      rows.forEach((row) => {
-        row.hidden = !row.textContent.toLowerCase().includes(term);
-      });
+      rows.forEach((row) => { row.hidden = !row.textContent.toLowerCase().includes(term); });
     });
   </script>
 </body>
