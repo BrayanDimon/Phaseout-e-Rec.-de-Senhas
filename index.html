@@ -5,9 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Phaseout & Recuperação de senha - CFTV</title>
 <style>
-:root{--black:#070707;--surface:#181818;--line:rgba(255,255,255,.11);--white:#f5f5f5;--gray:#b8b8b8;--green:#18a957;--yellow:#f59e0b;--red:#dc2626;--red-light:#fecaca;--green-bg:rgba(24,169,87,.25);--yellow-bg:rgba(245,158,11,.26);--red-bg:rgba(220,38,38,.24)}
+:root{--black:#070707;--surface:#181818;--line:rgba(255,255,255,.11);--white:#f5f5f5;--gray:#b8b8b8;--green:#18a957;--yellow:#f59e0b;--red:#dc2626;--red-light:#fecaca;--green-bg:rgba(24,169,87,.25);--yellow-bg:rgba(245,158,11,.26);--red-bg:rgba(220,38,38,.24);--blue:#7dd3fc;--blue-bg:rgba(125,211,252,.12)}
 *{box-sizing:border-box}body{margin:0;min-width:320px;background:var(--black);color:var(--white);font-family:"Segoe UI",Tahoma,Geneva,Verdana,sans-serif}body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.35;background:repeating-linear-gradient(0deg,transparent 0 28px,rgba(255,255,255,.025) 29px)}
-.page{position:relative;max-width:1500px;margin:auto;padding:30px 5vw 40px}.title-block{text-align:center;padding:16px 0 28px}h1{margin:0;font-size:clamp(24px,3vw,42px);line-height:1.1;letter-spacing:.7px;text-transform:uppercase;font-weight:900;white-space:nowrap}.toolbar{display:flex;justify-content:space-between;align-items:center;gap:16px;margin:26px 0 16px}.toolbar p{margin:0;color:var(--gray);font-size:14px}.search{width:min(100%,340px);padding:12px 14px;color:var(--white);background:var(--surface);border:1px solid var(--line);border-radius:9px;outline:0}.table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:14px}table{width:100%;min-width:640px;border-collapse:collapse}th{padding:15px 18px;text-align:left;background:rgba(24,169,87,.18);font-size:11px;letter-spacing:1.2px;text-transform:uppercase}td{padding:13px 18px;color:var(--gray);border-top:1px solid rgba(255,255,255,.07);font-size:14px}tbody tr:nth-child(even){background:rgba(255,255,255,.018)}td:first-child{color:var(--white);font-weight:700;white-space:nowrap}.phaseout{font-weight:700;border-left:4px solid transparent}.phaseout.in-line{color:#b7f7cb;background:var(--green-bg);border-left-color:var(--green)}.phaseout.recent{color:#fde68a;background:var(--yellow-bg);border-left-color:var(--yellow)}.phaseout.old{color:var(--red-light);background:var(--red-bg);border-left-color:var(--red)}@media(max-width:650px){.page{padding:24px 16px 36px}.toolbar{align-items:flex-start;flex-direction:column}.search{width:100%}h1{font-size:clamp(18px,5.5vw,30px)}}
+.page{position:relative;max-width:1500px;margin:auto;padding:30px 5vw 40px}.title-block{text-align:center;padding:16px 0 28px}h1{margin:0;font-size:clamp(24px,3vw,42px);line-height:1.1;letter-spacing:.7px;text-transform:uppercase;font-weight:900;white-space:nowrap}.toolbar{display:flex;justify-content:space-between;align-items:center;gap:16px;margin:26px 0 16px}.toolbar p{margin:0;color:var(--gray);font-size:14px}.search{width:min(100%,340px);padding:12px 14px;color:var(--white);background:var(--surface);border:1px solid var(--line);border-radius:9px;outline:0}.table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:14px}table{width:100%;min-width:980px;border-collapse:collapse}th{padding:15px 18px;text-align:left;background:rgba(24,169,87,.18);font-size:11px;letter-spacing:1.2px;text-transform:uppercase}td{padding:13px 18px;color:var(--gray);border-top:1px solid rgba(255,255,255,.07);font-size:14px}tbody tr:nth-child(even){background:rgba(255,255,255,.018)}td:first-child{color:var(--white);font-weight:700;white-space:nowrap}.phaseout{font-weight:700;border-left:4px solid transparent}.phaseout.in-line{color:#b7f7cb;background:var(--green-bg);border-left-color:var(--green)}.phaseout.recent{color:#fde68a;background:var(--yellow-bg);border-left-color:var(--yellow)}.phaseout.old{color:var(--red-light);background:var(--red-bg);border-left-color:var(--red)}.doc-link{display:inline-block;color:var(--blue);text-decoration:none;font-weight:700;padding:6px 10px;border:1px solid rgba(125,211,252,.25);background:var(--blue-bg);border-radius:8px} .doc-link:hover{filter:brightness(1.08)}@media(max-width:650px){.page{padding:24px 16px 36px}.toolbar{align-items:flex-start;flex-direction:column}.search{width:100%}h1{font-size:clamp(18px,5.5vw,30px)}}
 </style>
 </head>
 <body>
@@ -19,7 +19,7 @@
   </section>
   <div class="table-wrap">
     <table>
-      <thead><tr><th>Produto</th><th>Método de recuperação de senha</th><th>Phaseout</th></tr></thead>
+      <thead><tr><th>Produto</th><th>Método de recuperação de senha</th><th>Phaseout</th><th>Manual</th><th>Ficha Técnica</th></tr></thead>
       <tbody id="products"></tbody>
     </table>
   </div>
@@ -35,14 +35,30 @@ const products = [
 ['iNVD 1016','E-mail, Perguntas de Segurança e Botão de reset','Equipamento Em linha'],['iNVD 3008 P','E-mail, Perguntas de Segurança e Botão de reset','Equipamento Em linha'],['iNVD 3016','E-mail, Perguntas de Segurança e Botão de reset','Equipamento Em linha'],['iNVD 3016 P','E-mail, Perguntas de Segurança e Botão de reset','Equipamento Em linha'],['iNVD 3032','E-mail, Perguntas de Segurança e Botão de reset','Equipamento Em linha'],['iNVD 5032','E-mail e Perguntas de Segurança','Dez/22'],['iNVD 5132','E-mail, Perguntas de Segurança e Botão de reset','Dez/24'],['iNVD 5232','E-mail, Perguntas de Segurança e Botão de reset','Equipamento em linha'],['iNVD 5232-16P','E-mail, Perguntas de Segurança e Botão de reset','Nov/25'],['iNVD 5316 PD','E-mail, Perguntas de Segurança e Botão de reset','Equipamento em linha'],['iNVD 7032','E-mail, Perguntas de Segurança e Botão de reset','Jul/24'],
 ['VD 16D1 480H','Senha padrão','Jul/15'],['VD 16D1 480M','Senha padrão','Jul/15'],['VD 16E 480','Senha padrão','Mai/12'],['VD 16E 480C','Senha padrão','Fev/13'],['VD 16H 480','Senha padrão','-'],['VD 16M 480','Senha padrão','Jul/15'],['VD 16S 480','Senha padrão','-'],['VD 16S 480 ST','Senha padrão','-'],['VD 3004','Senha padrão','Jul/14'],['VD 3008','Senha padrão','Jul/14'],['VD 3016','Senha padrão','Jul/14'],['VD 3104','Senha padrão','Set/15'],['VD 3108','Senha padrão','Jul/15'],['VD 3116','Senha padrão','Out/15'],['VD 32M 960','Senha padrão','-'],['VD 4D1 120M','Senha padrão','Dez/14'],['VD 4E 120','Senha padrão','Jan/12'],['VD 4E 120C','Senha padrão','Fev/13'],['VD 4H 120','Senha padrão','-'],['VD 4S 120','Senha padrão','-'],['VD 4S 120 ST','Senha padrão','-'],['VD 5004','Senha padrão','Set/15'],['VD 5008','Senha padrão','Jul/15'],['VD 5016','Senha padrão','Jul/15'],['VD 5024','Senha padrão','Jul/15'],['VD 5032','Senha padrão','Jun/15'],['VD 8D1 240M','Senha padrão','Dez/14'],['VD 8E 240','Senha padrão','Dez/12'],['VD 8E 240C','Senha padrão','Fev/13']
 ];
+
+const supportSearchBase = 'https://suporte.intelbras.com.br/central-de-ajuda/busca';
+function buildDocLink(product, type) {
+  const hint = type === 'manual' ? 'manual' : 'ficha técnica';
+  return `${supportSearchBase}?q=${encodeURIComponent(product + ' ' + hint)}`;
+}
 products.sort((a,b)=>a[0].localeCompare(b[0],'pt-BR',{numeric:true,sensitivity:'base'}));
 const months={jan:0,fev:1,mar:2,abr:3,mai:4,jun:5,jul:6,ago:7,set:8,out:9,nov:10,dez:11};
 const cutoff = new Date(); cutoff.setFullYear(cutoff.getFullYear() - 3);
 const tbody = document.getElementById('products');
 products.forEach(([product,method,phaseout]) => {
   const row = document.createElement('tr');
-  row.innerHTML = `<td>${product}</td><td>${method}</td><td>${phaseout}</td>`;
-  const cell = row.lastElementChild;
+  const manualLink = buildDocLink(product, 'manual');
+  const fichaLink = buildDocLink(product, 'ficha');
+
+  row.innerHTML = `
+    <td>${product}</td>
+    <td>${method}</td>
+    <td>${phaseout}</td>
+    <td><a class="doc-link" href="${manualLink}" target="_blank" rel="noopener noreferrer">Abrir</a></td>
+    <td><a class="doc-link" href="${fichaLink}" target="_blank" rel="noopener noreferrer">Abrir</a></td>
+  `;
+
+  const cell = row.children[2];
   const low = phaseout.toLowerCase();
   if (low.includes('equipamento') && low.includes('linha')) {
     cell.classList.add('phaseout', 'in-line');
@@ -50,6 +66,7 @@ products.forEach(([product,method,phaseout]) => {
     const match = low.match(/^(jan|fev|mar|abr|mai|jun|jul|ago|set|out|nov|dez)\/(\d{2})$/);
     cell.classList.add('phaseout', match && new Date(2000 + Number(match[2]), months[match[1]] + 1, 0) >= cutoff ? 'recent' : 'old');
   }
+
   tbody.appendChild(row);
 });
 const search = document.getElementById('search');
